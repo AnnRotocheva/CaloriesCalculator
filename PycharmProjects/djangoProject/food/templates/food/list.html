@@ -1,0 +1,17 @@
+{%  extends 'food/base.html' %}
+
+{% block title %}Все продукты{% endblock %}
+
+{% block content %}
+
+{% if  list%}
+    {%  for a in list %}
+        <a href="{% url 'food:detail' a.id %}">{{ a.name }}  </a> {{ a.calories }} 'Кк/100гр'
+
+    {% endfor %}
+
+{% else %}
+        Здесь ничего нет :с
+{% endif %}
+
+{% endblock %}
